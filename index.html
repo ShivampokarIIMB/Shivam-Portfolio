@@ -13,8 +13,15 @@
 
 <body>
   <header class="fade-in-delayed">
+
     <nav>
       <a class="logo" href="https://youtu.be/dQw4w9WgXcQ?si=4VrEPTGDgPSNG-XA" target="_blank">Shivam Pokar</a>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>      
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -23,8 +30,9 @@
         <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#interests">Interests</a></li>
         <li><a href="#contact">Contact</a></li>
-      </ul>      
+      </ul>
     </nav>
+    
   </header>
 
 
@@ -58,7 +66,7 @@
           <a href="https://urbox.in/" target="_blank" class="urbox-link"><strong>UrbOx India</strong></a> | Jun 2023 – Jan 2024
         </p>
         <p>
-          Developed expertise in CRM, procurement, vendor management, and social media. Worked closely with the operations team to streamline processes and optimize client relations.
+          During my time at UrbOx, I immersed myself in various aspects of business operations, gaining hands-on experience beyond a typical internship. While balancing college, I actively contributed to sales, customer relations, inventory management, procurement, and marketing. Working closely with a senior, I traveled across India, learning the nuances of business strategy and execution on the ground.
         </p>
       </div>
       <div class="job">
@@ -67,7 +75,7 @@
           <a href="https://urbox.in/" target="_blank" class="urbox-link"><strong>UrbOx India</strong></a> | Apr 2024 – Aug 2024
         </p>
         <p>
-          Currently exploring business strategy, focusing on investment analysis, strategic growth plans, and market entry strategies for expanding startups.
+          As part of UrbOx, I participated in the T-Angle Cohort 07 Program, an investment readiness initiative by T-Hub. During this program, we refined our pitch, built investor connections, and worked on enhancing financial models to make UrbOx investment-ready. The program provided valuable mentorship and strategic insights, aligning UrbOx’s growth strategy for scaling and fundraising.
         </p>
       </div>
     </div>
@@ -88,7 +96,7 @@
           </strong> (Sep 2024 - Dec 2027)
         </p><br>
         <p>
-          The program integrates digital technology, business management, and entrepreneurship, with a focus on digital strategies and entrepreneurial practices. Includes mentorship and hands-on projects for practical experience.
+          The programme integrates digital technology, business management, and entrepreneurship to train leaders for the digital business world. The curriculum focuses on digital strategies and entrepreneurial practices, offering mentorship, and hands-on projects for practical experience.
         </p>
       </div>
   
@@ -100,7 +108,7 @@
           </strong> (Aug 2024 - Apr 2027)
         </p><br>
         <p>
-          Developing a strong foundation in financial management, investment strategies, and business operations to build a successful career in the finance industry.
+          Pursuing Bachelor of Business Administration (BBA) with a Finance major at Avinash College of Commerce. Developing a strong foundation in financial management, investment strategies, and business operations to be well versed with all the ins and outs of the finance industry.
         </p>
       </div>
     </div>
@@ -138,20 +146,20 @@
         <p>Always on the lookout for what's happening globally and how it affects businesses and society.</p>
       </div>
       <div class="interest-box">
-        <h3>Modern Marketing</h3><br>
-        <p>Exploring how digital strategies and creativity blend to push businesses forward.</p>
-      </div>
-      <div class="interest-box">
         <h3><strong>Traveling 🗺️</strong></h3>
         <p>Passionate about exploring the world. <br>
         New places, unfamiliar territories, different ways of life. it resets my perspective and keeps things real</p>
+      </div>
+      <div class="interest-box">
+        <h3>Modern Marketing</h3><br>
+        <p>Exploring how digital strategies and creativity blend to push businesses forward.</p>
       </div>
       <div class="interest-box">
         <h3>Finance & Entrepreneurship</h3>
         <p>Keen about investments, startups, and the dynamics of business growth and scaling.</p>
       </div>
       <div class="interest-box">
-        <h3>Tech Buff</h3><br>
+        <h3>Tech Buff</h3>
         <p>Technology is the backbone of everything. I love learning about the latest trends and innovations.</p>
       </div>
     </div>
@@ -164,8 +172,9 @@
   <h2> Hobbies </h2><br>
   <div class="card-container">   
     <div class="card">
-      <h3>Driving</h3><br>
-      <p>Better behind the wheel than under the hood.</p>
+      <h3>Instruments</h3><br>
+      <p>I play the guitar, or I try to.<br>
+      (it's been collecting <br> dust for months now)</p>
     </div>
     <div class="card">
       <h3>♟ Chess</h3>
@@ -179,7 +188,7 @@
     </div>
     <div class="card">
       <h3>Writing</h3><br>
-      <p>Since yapping isn't appreciated anymore</p>
+      <p>Since yapping isn't appreciated anymore.</p>
     </div>
   </div>
 </section>
@@ -188,6 +197,7 @@
 
 
   <section id="contact">
+    <div class="social-media-card">
     <h2>📬 Contact Me</h2> <br>
     <p>Feel free to reach out or just vibe on socials:</p>
     <div class="social-links">
@@ -195,14 +205,20 @@
       <a href="https://linkedin.com/in/shivam-pokar-bb81b12b3" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="mailto:Shivam.pokar24@iimb.ac.in"><i class="fas fa-envelope"></i> Email Me</a>
     </div>
+  </div>
   </section>
 
   <footer>
-    <p>
+    <p class="footer-end">
       Made with <3 and chaos  •  
-      <a href="https://youtu.be/dQw4w9WgXcQ?si=4VrEPTGDgPSNG-XA" target="_blank" class="rick-link">Shivam Pokar</a> 2025
+      <a href="https://youtu.be/dQw4w9WgXcQ?si=4VrEPTGDgPSNG-XA" target="_blank" class="rick-link2">Shivam Pokar 2025 </a> 
     </p>
   </footer>
-  
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
