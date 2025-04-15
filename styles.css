@@ -8,8 +8,8 @@
 /* Body */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d1b2a;
-  color: #e0e1dd;
+  background-color: #ead2ac;
+  color: #000000;
   line-height: 1.6;
   scroll-behavior: smooth;
   text-align: center;
@@ -17,7 +17,7 @@ body {
 
 /* Navigation Bar */
 header {
-  background-color: #1b263b;
+  background-color: #4C2E05;
 }
 
 nav {
@@ -54,10 +54,18 @@ nav {
   color: #f0a500;
 }
 
-/* Nav Links Styling */
+/* Base nav styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1002;
+}
+
 .nav-links {
   display: flex;
-  list-style-type: none;
   gap: 2rem;
 }
 
@@ -66,13 +74,86 @@ nav {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
 }
 
-.nav-links a:hover {
-  color: #00bfff; /* Blue on hover */
+/* Underline animation */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4c2e05;
+  transition: width 0.3s ease-in-out;
 }
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1003;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1b263b;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
 /* Navigation links */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap; /* important for wrapping on small screens */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  z-index: 1001; /* Add this line */
+  position: relative; /* Required for z-index to work */
+}
+
+
+
 .nav-links a {
   color: white; /* Normal color */
   text-decoration: none; /* Remove default underline */
@@ -80,6 +161,17 @@ nav {
   font-weight: 500;
   position: relative; /* Make sure the pseudo-element is positioned relative to the link */
   padding-bottom: 5px; /* Create some space below text for the underline */
+}
+.nav-links a {
+  color: white; /* Default color */
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover {
+  color: #ead2ac; /* New color for hover effect */
 }
 
 .nav-links a::after {
@@ -89,7 +181,7 @@ nav {
   left: 0;
   width: 0; /* Start with no width */
   height: 2px; /* Height of the underline */
-  background-color: #00bfff; /* Blue underline */
+  background-color: #ead2ac; /* Blue underline */
   transition: width 0.3s ease-in-out; /* Animate the width */
 }
 
@@ -109,7 +201,7 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.5rem;
-  box-shadow: 0 0 20px rgba(112, 214, 255, 0.4); /* Initial glow */
+  box-shadow: 0 0 20px rgb(255, 255, 255); /* Initial glow */
   opacity: 0;
   animation: profileAnimation 2s ease-out forwards;
 }
@@ -117,31 +209,31 @@ nav {
 @keyframes profileAnimation {
   0% {
     opacity: 0;
-    box-shadow: 0 0 0 rgba(112, 214, 255, 0.85);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.85);
   }
   50% {
     opacity: 1;
-    box-shadow: 0 0 25px rgba(112, 214, 255, 0.85); /* Slightly brighter mid-glow */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.85); /* Slightly brighter mid-glow */
   }
   100% {
     opacity: 1;
-    box-shadow: 0 0 45px rgba(112, 214, 255, 0.85); /* Bigger, brighter final glow */
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.85); /* Bigger, brighter final glow */
   }
 }
 
 
 
 .intro-text span {
-  color: #70d6ff;
+  color: #000000;
 }
 .rick-link {
-  color: #00bfff; /* Normal: blue */
+  color: #000000; /* Normal: blue */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .rick-link:hover {
-  color: #f0a500; /* Hover: orange */
+  color: #F0A500; /* Hover: orange */
 }
 .intro-text {
   max-width: 700px; /* or 600px for tighter look */
@@ -255,15 +347,15 @@ nav {
   top: 0px;
   left: 0;
   width: 100%;
-  height: 280px; /* You can tweak this */
-  background: url('./Images/Ladakh\ Hotel\ View.jpg') center/cover no-repeat;
+  height: 270px; /* You can tweak this */
+  background: url('./Images/Snowy\ Mountains.jpg') center/cover no-repeat;
   z-index: 0;
 
   opacity: 0;
   animation: fadeHeroBG 1.5s ease-in forwards;
   animation-delay: 3s;
 
-  border: 10px solid #0d1b2a; /* Blue border */
+  border: 10px solid #ead2ac; /* Black border */
   border-radius: 10px; /* Optional: Rounded corners */
 }
 
@@ -297,7 +389,7 @@ nav {
   margin-bottom: 1.5rem;
   animation: profileAnimation 2s ease-out forwards;
   opacity: 0;
-  box-shadow: 0 0 30px rgba(112, 214, 255, 0.7);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
 }
 
 /* Animation when the images start to appear */
@@ -359,44 +451,44 @@ nav {
   flex: 1 1 300px; /* Ensures flexibility while keeping a minimum width */
 }
 .urbox-link {
-  color: #f0a500;
+  color: #f08800;
   text-decoration: underline;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .urbox-link:hover {
-  color: #00bfff;
+  color: #2DC7FF;
 }
 
 .college-link {
-  color: #f0a500; /* Light blue */
+  color: #f08800; /* Light blue */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .college-link:hover {
-  color: #00bfff; /* Orange on hover */
+  color: #2DC7FF; /* Orange on hover */
 }
 .edu-link {
-  color: #f0a500;
+  color: #f08800;
   text-decoration: underline;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .edu-link:hover {
-  color: #00bfff;
+  color: #2DC7FF;
 }
 .college-link {
-  color: #f0a500;
+  color: #f08800;
   text-decoration: underline;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .college-link:hover {
-  color: #00bfff; /* Orange color on hover */
+  color: #2DC7FF; /* Orange color on hover */
 }
 
 /* Headings and Paragraphs Styling */
@@ -417,7 +509,7 @@ nav {
 }
 
 .skill-card {
-  background-color: #1b263b;
+  background-color: #05668D;
   padding: 1rem;
   border-radius: 8px;
   color: white; /* Changed font color to white */
@@ -433,8 +525,17 @@ nav {
 
 .skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(240, 165, 0, 0.4);
+  box-shadow: 0 0 35px rgb(255, 255, 255);
 }
+
+
+/* Mobile-specific override: 2 columns on screens ≤ 600px */
+@media (max-width: 600px) {
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
 /* Hobbies Section */
 .card-container {
@@ -445,7 +546,7 @@ nav {
 }
 
 .card {
-  background-color: #1b263b;
+  background-color: #05668D;
   padding: 1.5rem;
   border-radius: 12px;
   width: 300px;
@@ -456,25 +557,46 @@ nav {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(240, 165, 0, 0.4);
+  box-shadow: 0 0 35px #ffffff;
 }
-
 
 /* Interests Section */
 .interest-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);  /* 4 equal columns in 1 row */
-  gap: 1rem;  /* Reduced gap between interest boxes */
-  justify-items: center;
-  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+}
+
+.interest-container > div {
+  width: 250px;
 }
 
 .interest-box {
-  background-color: #1b263b;
+  background-color: #05668D;
   padding: 1.5rem;
   border-radius: 12px;
-  width: 230px;  /* Adjusted width to fit 4 boxes in a row */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 230px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+
+@media (max-width: 600px) {
+  .interest-container > div {
+    width: calc(50% - 1rem); /* 2 columns with spacing */
+  }
+}
+
+
+
+/* Hover effect with white glow */
+.interest-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9); /* Bright blue glow */
 }
 
 .interest-box h3 {
@@ -484,6 +606,26 @@ nav {
 .interest-box p {
   font-size: 1rem;
 }
+
+
+/* Animation keyframes */
+@keyframes fadePopGlow {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0, 191, 255, 0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.7); /* Bright blue glow */
+  }
+}
+
 
 /* Contact Section */
 .social-links {
@@ -506,19 +648,19 @@ nav {
 
 /* Footer */
 footer {
-  background-color: #1b263b;
+  background-color: #4C2E05;
   padding: 2rem 0;
   margin-top: 2rem;
 }
-.rick-link {
-  color: #00bfff; /* Blue by default */
+.rick-link2 {
+  color: #ffffff; /* Black by default */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.rick-link:hover {
-  color: #f0a500; /* Orange on hover */
+.rick-link2:hover {
+  color: #f08800; /* Orange on hover */
 }
 
 /* General Styling for Cards */
@@ -526,7 +668,7 @@ footer {
   background-color: #1b263b;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px px rgb(255, 255, 255);
   width: 250px; /* Adjusted width */
   margin: 0 1rem;
   flex: 1 1 250px; /* Ensures flexibility and smaller width */
@@ -544,7 +686,7 @@ footer {
 
 /* General Styling for Cards */
 .job, .card {
-  background-color: #1b263b;
+  background-color: #05668D;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -568,11 +710,169 @@ footer {
 }
 /* Style for anchored links */
 a {
-  color: #f0a500; /* Orange color */
+  color: #f08800; /* Orange color */
   text-decoration: underline; /* Keeps the underline */
 }
 
 a:hover {
   color: #1794f4; /* Purple color on hover */
+}
+
+/* test test test */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem; /* optional: reduce size slightly */
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* hamburger test */
+/* Default hamburger hidden */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+  }
+
+  nav {
+    position: relative;
+  }
+}
+.card, .skill-card, .job, .degree, .interest-box {
+  color: white;
+}
+.card a,
+.skill-card a,
+.job a,
+.degree a,
+.interest-box a {
+  color: #f0a500; /* Slightly brighter yellow */
+}
+
+.card a:hover,
+.skill-card a:hover,
+.job a:hover,
+.degree a:hover,
+.interest-box a:hover {
+  color: #2DC7FF;
+}
+.footer-end {
+  color: white;
+}
+.card, .skill-card, .interest-box, .job, .degree {
+  background-color: #006d6f;
+  color: white;  /* Ensure the text remains white for contrast */
+}
+
+.social-media-card {
+  background-color: #4c2e05;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 15px 450px; /* Space around the card */
+  text-align: center; /* Center the text inside the card */
+}
+
+.social-media-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px; /* Space between title and links */
+}
+
+.social-media-links a {
+  display: inline-block;
+  margin: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+  color: #1a8fd5; /* Slightly darker shade for hover effect */
+}
+@media (max-width: 768px) {
+  .social-media-card {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .social-media-links a {
+    font-size: 16px;
+    margin: 8px 10px;
+  }
+}
+/* Default card styling */
+.card {
+  background-color: #006d6f;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  width: 250px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out; /* Optional, for animation */
+}
+
+/* Container for cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  gap: 15px; /* Space between cards */
+  justify-items: center; /* Center cards */
+  margin: 20px;
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 10px; /* Adjust gap for smaller screens */
+  }
+
+  .card {
+    width: 100%; /* Make cards take up full width of their grid cell */
+    font-size: 14px; /* Adjust font size */
+    padding: 15px; /* Adjust padding */
+    margin: 5px; /* Reduce margin */
+  }
 }
 
