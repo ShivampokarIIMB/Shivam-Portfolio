@@ -875,4 +875,29 @@ a:hover {
     margin: 5px; /* Reduce margin */
   }
 }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-card {
+  background-color: #05668D;
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(45, 199, 255, 0.6);
+  width: 250px; /* default width for desktop */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔧 Fix for mobile */
+@media (max-width: 600px) {
+  .skill-card {
+    width: calc(50% - 1rem); /* Two columns with spacing */
+  }
+}
 
