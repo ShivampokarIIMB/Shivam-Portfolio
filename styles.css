@@ -29,7 +29,7 @@ nav {
 .fade-in-delayed {
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
-  animation-delay: 4s;
+  animation-delay: 3.5s;
 }
 
 @keyframes fadeIn {
@@ -353,7 +353,7 @@ nav {
 
   opacity: 0;
   animation: fadeHeroBG 1.5s ease-in forwards;
-  animation-delay: 3s;
+  animation-delay: 3.5s;
 
   border: 10px solid #ead2ac; /* Black border */
   border-radius: 10px; /* Optional: Rounded corners */
@@ -529,12 +529,15 @@ nav {
 }
 
 
-/* Mobile-specific override: 2 columns on screens ≤ 600px */
+
+
+/* Fix for mobile */
 @media (max-width: 600px) {
-  .skills {
-    grid-template-columns: repeat(2, 1fr);
+  .skill-card {
+    width: calc(50% - 1rem); /* Two columns with spacing */
   }
 }
+
 
 
 /* Hobbies Section */
@@ -883,21 +886,15 @@ a:hover {
 }
 
 .skill-card {
-  background-color: #05668D;
+  background-color: #006d6f;
   padding: 1rem;
   border-radius: 12px;
   color: white;
   font-weight: bold;
   text-align: center;
-  box-shadow: 0 0 15px rgba(45, 199, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   width: 250px; /* default width for desktop */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 🔧 Fix for mobile */
-@media (max-width: 600px) {
-  .skill-card {
-    width: calc(50% - 1rem); /* Two columns with spacing */
-  }
-}
 
