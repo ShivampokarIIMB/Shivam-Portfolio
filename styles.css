@@ -652,7 +652,7 @@ nav {
 /* Footer */
 footer {
   background-color: #4C2E05;
-  padding: 2rem 0;
+  padding: 1rem 0;
   margin-top: 2rem;
 }
 .rick-link2 {
@@ -811,13 +811,15 @@ a:hover {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 15px 450px; /* Space around the card */
-  text-align: center; /* Center the text inside the card */
+  margin: 15px auto;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
 }
 
 .social-media-card h3 {
   font-size: 24px;
-  margin-bottom: 15px; /* Space between title and links */
+  margin-bottom: 15px;
 }
 
 .social-media-links a {
@@ -830,19 +832,9 @@ a:hover {
 }
 
 .social-media-links a:hover {
-  color: #1a8fd5; /* Slightly darker shade for hover effect */
+  color: #1a8fd5;
 }
-@media (max-width: 768px) {
-  .social-media-card {
-    padding: 15px;
-    margin: 15px 0;
-  }
-  
-  .social-media-links a {
-    font-size: 16px;
-    margin: 8px 10px;
-  }
-}
+
 /* Default card styling */
 .card {
   background-color: #006d6f;
